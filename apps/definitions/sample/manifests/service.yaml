@@ -5,7 +5,7 @@ metadata:
   name: nginx
   annotations:
     # Grant it an IP on the network
-    metallb.universe.tf/address-pool: default
+    metallb.universe.tf/address-pool: lan-address-pool
   labels:
     app: nginx
 spec:

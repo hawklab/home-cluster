@@ -6,7 +6,7 @@ metadata:
 data:
   config: |
     address-pools:
-    - name: default
+    - name: lan-address-pool
       protocol: layer2
       addresses:
       - 10.60.1.40-10.60.1.49
