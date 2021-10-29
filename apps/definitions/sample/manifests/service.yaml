@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: sample
+  name: nginx
+  annotations:
+    # Grant it an IP on the network
+    metallb.universe.tf/address-pool: lan-address-pool
+  labels:
+    app: nginx
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 80
+      protocol: TCP
+      targetPort: 80
+  selector:
+    app: nginx
