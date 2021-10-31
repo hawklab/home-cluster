@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: envoy
+  name: envoy
+  namespace: web
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: envoy
+  template:
+    metadata:
+      labels:
+        app: envoy
+    spec:
+      containers:
+      - image: envoyproxy/envoy:v1.20.0
+        name: envoy
+        ports:
+        - containerPort: 80
+        - containerPort: 443
