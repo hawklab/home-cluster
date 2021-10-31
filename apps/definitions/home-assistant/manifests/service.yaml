@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: home-assistant
+  name: home-assistant
+  labels:
+    app: home-assistant
+spec:
+  ports:
+    - port: 80
+      protocol: TCP
+      targetPort: 8123
+  selector:
+    app: home-assistant
