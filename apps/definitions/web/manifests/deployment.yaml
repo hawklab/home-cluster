@@ -16,8 +16,23 @@ spec:
         app: envoy
     spec:
       containers:
-      - image: envoyproxy/envoy:v1.20.0
+      - image: envoyproxy/envoy-alpine:v1.20.0
         name: envoy
         ports:
         - containerPort: 80
         - containerPort: 443
+        volumeMounts:
+        - name: envoy-config
+          mountPath: /etc/envoy
+          readOnly: true
+        # securityContext:
+        #   allowPrivilegeEscalation: true
+        #   capabilities:
+        #     add:
+        #     # Grant envoy the capability to bind ports
+        #     # https://man7.org/linux/man-pages/man7/capabilities.7.html
+        #     - NET_BIND_SERVICE
+      volumes:
+        - name: envoy-config
+          configMap:
+            name: envoy-config

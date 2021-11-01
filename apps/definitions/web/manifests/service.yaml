@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   namespace: web
-  name: web
+  name: envoy
   annotations:
     # Grant it an IP on the network
     metallb.universe.tf/address-pool: lan-address-pool
@@ -14,7 +14,7 @@ spec:
     - port: 80
       name: http
       protocol: TCP
-      targetPort: 80
+      targetPort: 8080
     - port: 443
       name: https
       protocol: TCP

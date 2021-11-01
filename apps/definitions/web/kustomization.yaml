@@ -3,5 +3,6 @@ kind: Kustomization
 namespace: web
 resources:
   - manifests/namespace.yaml
+  - manifests/config.yaml
   - manifests/deployment.yaml
   - manifests/service.yaml
