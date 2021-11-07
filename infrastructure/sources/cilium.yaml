@@ -4,4 +4,4 @@ metadata:
   name: cilium
 spec:
   interval: 30m
-  url: ttps://helm.cilium.io/
+  url: https://helm.cilium.io/
