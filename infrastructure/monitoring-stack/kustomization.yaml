@@ -1,7 +1,6 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
 metadata:
-  generation: 1
   name: monitoring-stack
   namespace: flux-system
 spec:
