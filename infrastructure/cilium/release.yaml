@@ -7,11 +7,12 @@ spec:
   releaseName: cilium
   chart:
     spec:
-      chart: cilicum
+      chart: cilicum/cilium
       version: 1.10.5
       sourceRef:
         kind: HelmRepository
-        name: cilium
+        name: cilium-helm
+        namespace: flux-system
   interval: 10m
   install:
     remediation:
